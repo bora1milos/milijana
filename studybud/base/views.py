@@ -10,7 +10,8 @@ rooms = [
 
 # Create your views here.
 def home(request):
-    return render(request, 'home.html')
+    contex =  {'rooms': rooms }
+    return render(request, 'home.html', contex)
 
 def room(request):
     return render(request, 'room.html')
