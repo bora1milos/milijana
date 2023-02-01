@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Room
+from .models import Room, Topic
 from .forms import RoomForm
 rooms = [
     {'id':1, 'name' : 'let learn python'},
@@ -9,7 +9,8 @@ rooms = [
 # Create your views here.
 def home(request):
     rooms = Room.objects.all()
-    contex =  {'rooms': rooms }
+    topics = Topic.objects.all()
+    contex =  {'rooms': rooms, 'topics' : topics }
     return render(request, 'base/home.html', contex)
 
 def room(request, pk):
