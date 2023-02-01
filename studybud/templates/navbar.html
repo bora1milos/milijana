@@ -1,1 +1,8 @@
-<H1> NAVBAR </H1>
+<a href="/"> LOGO </a>
+
+<form method="GET" action= "{% url 'home'  %}">
+    <input type="text" name="q" placeholder="Search Rooms..."/>
+</form>
+<hr>
+
+<a href="{% url 'login' %}">Login</a>
